@@ -1,0 +1,107 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SOEDiff</title>
+<link href="style.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="./DreamBooth_files/jquery.js"></script> -->
+</head>
+
+<body>
+<div class="content">
+  <h1><strong>SOEDiff: Efficient Distillation for Small Object Editing</strong></h1>
+  <p id="authors">Anonymous Authors
+
+    <span style="font-size: 16px"><br>
+        <sup></sup> Anonymous Institutions <sup>
+        </p>
+
+
+
+        <p><b>SOEDiff</b> is the first image inpainting model that identity and address small object editing problem with mask region much smaller than normal size that former inpainting model used and achieve outperform result on small data filtered from MSCOCO and OpenImage.</p>
+</div>
+
+
+<div class="content">
+  <h2 style="text-align:center;"><strong>Abstract</strong></h2>
+  <p>In this paper, we delve into a new task known as small object editing (SOE), which focuses on text-based image inpainting within a constrained, small-sized area. Despite the remarkable success
+    have been achieved by current image inpainting approaches, their application to the SOE task generally results in failure cases such
+    as Object Missing, Text-Image Mismatch, and Distortion. These failures stem from the limited use of small-sized objects in training
+    datasets and the downsampling operations employed by U-Net models, which hinders accurate generation. To overcome these
+    challenges, we introduce a novel training-based approach, <b>SOEDiff</b>, aimed at enhancing the capability of baseline models like StableDiffusion in editing small-sized objects while minimizing training costs.
+    Specifically, our method involves two key components: SO-LoRA, which efficiently fine-tunes low-rank matrices, and Cross-Scale Score Distillation loss, which leverages high-resolution predictions from the pre-trained teacher diffusion model. Our method
+    presents significant improvements on the test dataset collected from MSCOCO and OpenImage, validating the effectiveness of our proposed method in small object editing. In particular, when comparing SOEDiff with SD-I model on the OpenImage-f dataset, we observe a 0.99 improvement in CLIP-Score and a reduction of 2.87
+    in FID.</p>
+    <img src="fig/teaser.png" class="teaser-gif" style="width:100%;">
+  </div>
+
+
+<div class="content">
+    <h2 style="text-align:center;"><strong>Method</strong></h2>
+    <!-- <p> <b>PowerPaint</b> fine-tunes a text-to-image model with two task prompts, i.e., P<sub>obj</sub> and P<sub>ctxt</sub>, for text-guided object inpainting and context-aware image inpainting, respectively. Specifically, P<sub>obj</sub> can be used as a negative prompt with classifier-free guidance sampling for effective object removal. We further introduce P<sub>shape</sub> for shape-guided object inpainting, which can be further extended by prompt interpolation with P<sub>ctxt</sub> to control how closely the generated objects should align with the mask shape.</p> -->
+    <p><b>SOEDiff</b> is fune-tuned with small-scaled text-image datasets with two main components:First, drawing inspiration from LoRA that known for its efficiency in fine-tuning diffusion models, we propose the <b>SO-LoRA</b>, which aims to optimize low-rank matrices for small object editing, enhancing the alignment between textual descriptions and generated small objects. Second, we propose the <b>Cross-Scale Score Distillation</b> loss to further enhance the image quality. Additionally, to further enhance the image fidelity, we can optionally fine-tune the VAE by performing pixel-level reconstruction.</p>
+    <br>
+    <img class="summary-img" src="fig/methods.png" style="width:100%;"> <br>
+  </div>
+
+<div class="content">
+  <h2 style="text-align:center;"><strong>Method Comparison </strong></h2>
+  <img src="fig/compare.png" class="teaser-gif" style="width:100%;">
+</div>
+
+<div class="content">
+  <h2 style="text-align:center;"><strong>Ablation Results</strong></h2>
+  <img src="fig/ablation.png" class="teaser-gif" style="width:100%;">
+</div>
+
+
+<div class="content">
+  <h2 style="text-align:center;"><strong>Extend Applications</strong></h2>
+  <img src="fig/extend.png" class="teaser-gif" style="width:100%;">
+</div>
+
+<div class="content">
+  <h2 style="text-align:center;"><strong>More Results</strong></h2>
+  <img src="fig/more-examples.png" class="teaser-gif" style="width:100%;">
+</div>
+
+
+
+
+<!-- 
+<div id="results2" class="content">
+  <h2 style="text-align:center;"><strong>Integration with <a href="https://github.com/lllyasviel/ControlNet" target="_blank">ControlNet </a></strong></h2>
+    <h4>PowerPaint + Depth</h4>
+    <img class="summary-img" src="fig/sub_depth.png" style="width:100%;">
+    <h4>PowerPaint + Canny</h4>
+    <img class="summary-img" src="fig/sup_canny.png" style="width:100%;">
+    <h4>PowerPaint + HED</h4>
+    <img class="summary-img" src="fig/sup_hed.png" style="width:100%;">
+    <h4>PowerPaint + Human Pose</h4>
+    <img class="summary-img" src="fig/sup_pose.png" style="width:100%;">
+</div>
+ -->
+
+<div class="content">
+  <h2 style="text-align:center;"><strong>User Preference</strong></h2>
+  <img src="fig/user.png" class="teaser-gif" style="width:100%;">
+</div>
+
+<div class="content">
+  <h2 style="text-align:center;"><strong>BibTex</strong></h2>
+  <code> <br>@misc{Anonymous2024Anonymous,
+      title={SOEDiff: Efficient Distillation for Small Object Editing}, 
+      author={Anonymous Authors},
+      year={2024},
+      eprint={XXXX.XXXX},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+   </code> 
+</div>
+
+</body>
+
+
+</html>
+ 
