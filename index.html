@@ -4,7 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SOEDiff</title>
 <link href="style.css" rel="stylesheet">
-<!-- <script type="text/javascript" src="./DreamBooth_files/jquery.js"></script> -->
 </head>
 
 <body>
@@ -38,7 +37,6 @@
 
 <div class="content">
     <h2 style="text-align:center;"><strong>Method</strong></h2>
-    <!-- <p> <b>PowerPaint</b> fine-tunes a text-to-image model with two task prompts, i.e., P<sub>obj</sub> and P<sub>ctxt</sub>, for text-guided object inpainting and context-aware image inpainting, respectively. Specifically, P<sub>obj</sub> can be used as a negative prompt with classifier-free guidance sampling for effective object removal. We further introduce P<sub>shape</sub> for shape-guided object inpainting, which can be further extended by prompt interpolation with P<sub>ctxt</sub> to control how closely the generated objects should align with the mask shape.</p> -->
     <p><b>SOEDiff</b> is fune-tuned with small-scaled text-image datasets with two main components:First, drawing inspiration from LoRA that known for its efficiency in fine-tuning diffusion models, we propose the <b>SO-LoRA</b>, which aims to optimize low-rank matrices for small object editing, enhancing the alignment between textual descriptions and generated small objects. Second, we propose the <b>Cross-Scale Score Distillation</b> loss to further enhance the image quality. Additionally, to further enhance the image fidelity, we can optionally fine-tune the VAE by performing pixel-level reconstruction.</p>
     <br>
     <img class="summary-img" src="fig/methods.png" style="width:100%;"> <br>
@@ -46,8 +44,6 @@
 
 <div class="content">
   <h2 style="text-align:center;"><strong>Method Comparison </strong></h2>
-  <!-- <embed src="fig/compare_1.pdf" type="application/pdf" width="100%" height="100%">
-  <embed src="fig/compare_2.pdf" type="application/pdf" width="100%" height="100%"> -->
 
 
   <img src="fig/compare_1.png" class="teaser-gif" style="width:100%;">
@@ -64,7 +60,6 @@
   <h2 style="text-align:center;"><strong>Extend Applications</strong></h2>
   <img src="fig/extend_1.png" class="teaser-gif" style="width:100%;">
   <img src="fig/extend_2.png" class="teaser-gif" style="width:100%;">
-  <!-- <img src="fig/extend.png" class="teaser-gif" style="width:100%;"> -->
 </div>
 
 <div class="content">
@@ -73,21 +68,6 @@
 </div>
 
 
-
-
-<!-- 
-<div id="results2" class="content">
-  <h2 style="text-align:center;"><strong>Integration with <a href="https://github.com/lllyasviel/ControlNet" target="_blank">ControlNet </a></strong></h2>
-    <h4>PowerPaint + Depth</h4>
-    <img class="summary-img" src="fig/sub_depth.png" style="width:100%;">
-    <h4>PowerPaint + Canny</h4>
-    <img class="summary-img" src="fig/sup_canny.png" style="width:100%;">
-    <h4>PowerPaint + HED</h4>
-    <img class="summary-img" src="fig/sup_hed.png" style="width:100%;">
-    <h4>PowerPaint + Human Pose</h4>
-    <img class="summary-img" src="fig/sup_pose.png" style="width:100%;">
-</div>
- -->
 
 <div class="content">
   <h2 style="text-align:center;"><strong>User Preference</strong></h2>
